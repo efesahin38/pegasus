@@ -1,0 +1,234 @@
+/* Bildpfade — jeder Service nutzt Fotos aus seinem eigenen Ordner */
+function img(folder, file, caption, alt) {
+  const base = folder ? `images/${folder}/` : 'images/';
+  return { src: base + file, alt: alt || caption, caption };
+}
+
+const SERVICES = [
+  {
+    slug: 'privatumzug',
+    icon: 'home',
+    title: 'Privatumzug',
+    desc: 'Sorgenfreier Umzug für Sie und Ihre Familie mit höchster Sorgfalt.',
+    intro: 'Ein Privatumzug ist mehr als Transport — es geht um Ihr Zuhause. Unser Team in Pegasus-Uniform kümmert sich von der ersten Kiste bis zur letzten Möbelposition um jeden Schritt.',
+    body: 'Wir planen Ihren Umzug individuell, schützen empfindliche Gegenstände und halten vereinbarte Termine ein. Mit unserer Mercedes-Flotte und erfahrenen Umzugshelfern sind Sie in sicheren Händen — deutschlandweit.',
+    images: [
+      img(null, 'ChatGPT Image 21 May 2026 16_20_04.png', 'Professionelles Pegasus-Team beim Beladen unseres LKW.', 'Privatumzug — LKW'),
+      img(null, 'ChatGPT Image 21 May 2026 16_37_24.png', 'Sorgfältige Verpackung mit Pegasus-Umzugskartons.', 'Privatumzug — Verpackung'),
+    ],
+    highlights: ['Kompletter Full-Service', 'Versicherter Transport', 'Deutschlandweit'],
+  },
+  {
+    slug: 'firmenumzug',
+    icon: 'building',
+    title: 'Firmenumzug',
+    desc: 'Effiziente Büroumzüge ohne Betriebsunterbrechung.',
+    intro: 'Büroumzüge erfordern Präzision und Tempo. Pegasus koordiniert Ihren Firmenumzug so, dass Ausfallzeiten minimal bleiben — am Wochenende oder nach Feierabend.',
+    body: 'IT-Geräte, Akten und Büromöbel werden strukturiert verpackt, transportiert und am neuen Standort aufgestellt. Unsere Fahrzeuge tragen das Pegasus-Logo — Ihr Partner erkennbar und verlässlich.',
+    images: [
+      img('Firmenumzug', 'ChatGPT Image 21 May 2026 20_57_10.png', 'Strukturierter Firmenumzug mit Pegasus-Team.', 'Firmenumzug'),
+      img('Firmenumzug', 'ChatGPT Image 21 May 2026 20_58_34.png', 'Effiziente Büroumzüge ohne lange Ausfallzeiten.', 'Firmenumzug Büro'),
+    ],
+    highlights: ['Wochenend-Umzüge möglich', 'Strukturierte Raumplanung', 'Dedizierter Projektleiter'],
+  },
+  {
+    slug: 'moebeltransport',
+    icon: 'sofa',
+    title: 'Möbeltransport',
+    desc: 'Sicherer Transport hochwertiger Möbelstücke.',
+    intro: 'Einzelne Möbelstücke oder komplette Einrichtungen — wir transportieren mit Schutzdecken, Zurrgurten und erfahrenen Händen. Unsere Mitarbeiter tragen Pegasus auf der Uniform.',
+    body: 'Vom Sofa bis zum Schrank: Jedes Stück wird gesichert und schonend verladen. Unser LKW mit Pegasus-Branding steht für Qualität auf der Straße.',
+    images: [
+      img('Möbeltransport', 'ChatGPT Image 21 May 2026 21_00_27.png', 'Sicherer Möbeltransport mit Pegasus-Team und Flotte.', 'Möbeltransport'),
+    ],
+    highlights: ['Schutzdecken inklusive', 'Auch Einzelstücke', 'Deutschlandweit'],
+  },
+  {
+    slug: 'entruempelung',
+    icon: 'trash',
+    title: 'Entrümpelung',
+    desc: 'Fachgerechte Beräumung von Wohnungen und Objekten.',
+    intro: 'Wir räumen Wohnungen, Büros und Lagerräume vollständig — diskret, schnell und fachgerecht. Alles wird sortiert und umweltgerecht entsorgt.',
+    body: 'Unser Team arbeitet mit Pegasus-Ausrüstung. Nach der Entrümpelung übergeben wir das Objekt besenrein.',
+    images: [
+      img('Entrümpelung', 'ChatGPT Image 21 May 2026 21_06_46.png', 'Fachgerechte Entrümpelung durch unser Pegasus-Team.', 'Entrümpelung'),
+    ],
+    highlights: ['Komplette Räumung', 'Fachgerechte Entsorgung', 'Besenreine Übergabe'],
+  },
+  {
+    slug: 'sperrmuellentsorgung',
+    icon: 'box',
+    title: 'Sperrmüllentsorgung',
+    desc: 'Umweltgerechte Entsorgung von Sperrmüll.',
+    intro: 'Alte Möbel, Matratzen oder Sperrgut — wir holen ab und entsorgen nach geltenden Vorschriften. Kein Stress mit der Deponie.',
+    body: 'Pegasus übernimmt Abholung und fachgerechte Trennung. Unsere Fahrzeuge sind klar als Pegasus Umzug & Service erkennbar.',
+    images: [
+      img('Sperrmüllentsorgung', 'ChatGPT Image 21 May 2026 21_07_17.png', 'Umweltgerechte Sperrmüllentsorgung.', 'Sperrmüllentsorgung'),
+      img('Sperrmüllentsorgung', 'ChatGPT Image 21 May 2026 21_12_01.png', 'Abholung und fachgerechte Entsorgung vor Ort.', 'Sperrmüll Abholung'),
+    ],
+    highlights: ['Umweltgerechte Entsorgung', 'Abholung nach Termin', 'Transparente Preise'],
+  },
+  {
+    slug: 'kelleraufloesung',
+    icon: 'boxes',
+    title: 'Kellerauflösung',
+    desc: 'Schnelle und saubere Räumung Ihres Kellers.',
+    intro: 'Überfüllte Keller werden von uns komplett geräumt — inklusive Entsorgung und Reinigung. Schnell und ohne Chaos für Sie.',
+    body: 'Unser Team packt, trägt und transportiert alles mit Pegasus-Ausrüstung. Am Ende ist Ihr Keller wieder nutzbar.',
+    images: [
+      img('Kellerauflösung', 'ChatGPT Image 21 May 2026 21_17_05.png', 'Systematische Kellerauflösung.', 'Kellerauflösung'),
+      img('Kellerauflösung', 'ChatGPT Image 21 May 2026 21_24_28.png', 'Saubere Übergabe nach der Kellerräumung.', 'Keller geräumt'),
+    ],
+    highlights: ['Komplette Kellerräumung', 'Entsorgung inklusive', 'Kurzfristige Termine'],
+  },
+  {
+    slug: 'haushaltsaufloesung',
+    icon: 'house',
+    title: 'Haushaltsauflösung',
+    desc: 'Diskrete Abwicklung kompletter Haushalte.',
+    intro: 'Bei Erbschaften, Umzügen ins Ausland oder Wohnungsaufgabe — wir lösen komplette Haushalte diskret und respektvoll auf.',
+    body: 'Wertgegenstände werden separat behandelt, der Rest fachgerecht entsorgt. Pegasus steht für Vertrauen und Professionalität.',
+    images: [
+      img('Haushaltsauflösung', 'ChatGPT Image 21 May 2026 21_32_42.png', 'Diskrete Haushaltsauflösung.', 'Haushaltsauflösung'),
+      img('Haushaltsauflösung', 'ChatGPT Image 21 May 2026 21_34_20.png', 'Respektvolle Abwicklung kompletter Haushalte.', 'Haushalt aufgelöst'),
+    ],
+    highlights: ['Diskret & respektvoll', 'Wertgegenstände-Sortierung', 'Komplettservice'],
+  },
+  {
+    slug: 'verpackungsservice',
+    icon: 'package',
+    title: 'Verpackungsservice',
+    desc: 'Professioneller Schutz für Ihr Hab und Gut.',
+    intro: 'Porzellan, Elektronik, Kunst — wir verpacken mit Profi-Material und Pegasus-Umzugskartons. Jedes Stück erhält den passenden Schutz.',
+    body: 'Unsere Mitarbeiter in Pegasus-Uniform arbeiten effizient und strukturiert. Sie müssen nichts selbst packen.',
+    images: [
+      img('Verpackungsservice', 'ChatGPT Image 21 May 2026 21_47_00.png', 'Professionelles Packen mit Pegasus-Kartons.', 'Verpackungsservice'),
+      img('Verpackungsservice', 'ChatGPT Image 21 May 2026 21_48_59.png', 'Sorgfältiger Schutz für empfindliche Gegenstände.', 'Verpackung'),
+    ],
+    highlights: ['Profi-Packmaterial', 'Empfindliche Gegenstände', 'Beschriftung inklusive'],
+  },
+  {
+    slug: 'moebelmontage',
+    icon: 'wrench',
+    title: 'Möbelmontage',
+    desc: 'Präziser Auf- und Abbau Ihrer Möbel.',
+    intro: 'Schränke, Betten, Sofas — unsere Monteure bauen präzise auf und ab. Pegasus-Team mit Logo auf der Uniform, Werkzeug immer dabei.',
+    body: 'Wir kennen alle gängigen Systeme und arbeiten sauber. Nach der Montage ist alles stabil und gebrauchsfertig.',
+    images: [
+      img('Möbelmontage', 'ChatGPT Image 21 May 2026 21_52_45.png', 'Präzise Möbelmontage durch Pegasus-Monteure.', 'Möbelmontage'),
+      img('Möbelmontage', 'ChatGPT Image 21 May 2026 21_54_53.png', 'Professioneller Auf- und Abbau Ihrer Möbel.', 'Montage'),
+    ],
+    highlights: ['Auf- & Abbau', 'Alle gängigen Systeme', 'Werkzeug inklusive'],
+  },
+  {
+    slug: 'kuechenmontage',
+    icon: 'chef',
+    title: 'Küchenmontage',
+    desc: 'Spezialisten für komplette Küchensysteme.',
+    intro: 'Komplette Küchen werden von unseren Spezialisten aufgebaut — Schränke, Arbeitsplatten, Geräteanschlüsse nach Absprache.',
+    body: 'Pegasus Montage-Team arbeitet millimetergenau. Nach dem Aufbau ist Ihre Küche sofort nutzbar.',
+    images: [
+      img('Küchenmontage', 'ChatGPT Image 21 May 2026 21_58_12.png', 'Spezialisten für Küchenmontage.', 'Küchenmontage'),
+      img('Küchenmontage', 'ChatGPT Image 21 May 2026 21_59_43.png', 'Millimetergenauer Aufbau Ihrer Küche.', 'Küche montiert'),
+    ],
+    highlights: ['Komplettküchen', 'Millimetergenau', 'Koordination mit Elektriker'],
+  },
+  {
+    slug: 'reinigungsservice',
+    icon: 'sparkle',
+    title: 'Reinigungsservice',
+    desc: 'Besenreine Übergabe nach jedem Umzug.',
+    intro: 'Nach Umzug oder Entrümpelung übergeben wir Objekte besenrein — Böden, Fenster, Küche und Bad nach Absprache.',
+    body: 'Ideal für Übergabe an Vermieter oder Käufer. Unser Team arbeitet gründlich und termingerecht.',
+    images: [
+      img('Reinigungsservice', 'ChatGPT Image 21 May 2026 22_08_19.png', 'Besenreine Übergabe nach Umzug oder Renovierung.', 'Reinigungsservice'),
+    ],
+    highlights: ['Besenreine Übergabe', 'Nach Umzug buchbar', 'Wohnungsübergabe-tauglich'],
+  },
+  {
+    slug: 'gartenreinigung',
+    icon: 'garden',
+    title: 'Gartenreinigung',
+    desc: 'Pflege und Reinigung Ihrer Außenanlagen.',
+    intro: 'Rasen, Hecken, Wege und Terrassen — wir pflegen und reinigen Ihre Außenanlagen. Unser Team trägt Pegasus-Uniform.',
+    body: 'Vor dem Verkauf einer Immobilie oder nach langem Winter — wir bringen Ihren Garten in Form.',
+    images: [
+      img('Gartenreinigung', 'ChatGPT Image 21 May 2026 20_06_50.png', 'Professionelle Gartenpflege.', 'Gartenreinigung'),
+      img('Gartenreinigung', 'ChatGPT Image 21 May 2026 22_13_46.png', 'Pflege und Reinigung Ihrer Außenanlagen.', 'Garten'),
+    ],
+    highlights: ['Rasen & Hecken', 'Wegereinigung', 'Komplettservice möglich'],
+  },
+  {
+    slug: 'transportservice',
+    icon: 'truck',
+    title: 'Transportservice',
+    desc: 'Zuverlässige Logistik von A nach B.',
+    intro: 'Transporte jeder Größe — von Paketen bis zum kompletten Haushalt. Unsere Mercedes-Flotte mit Pegasus-Logo ist deutschlandweit im Einsatz.',
+    body: 'GPS-Tracking, Vollkasko und erfahrene Fahrer. Pünktlich, sicher, dokumentiert.',
+    images: [
+      img('Transportservice', 'ChatGPT Image 21 May 2026 22_17_44.png', 'Zuverlässiger Transportservice deutschlandweit.', 'Transportservice'),
+      img('Transportservice', 'ChatGPT Image 21 May 2026 22_19_18.png', 'Pegasus-Flotte für sichere Logistik.', 'Transport'),
+    ],
+    highlights: ['GPS-Tracking', 'Vollkasko-Versicherung', 'Deutschlandweit'],
+  },
+  {
+    slug: 'express-transport',
+    icon: 'bolt',
+    title: 'Express Transport',
+    desc: 'Wenn jede Minute zählt — wir sind schnell vor Ort.',
+    intro: 'Dringende Lieferungen oder Eilumzüge — unser Express-Service ist innerhalb kürzester Zeit bei Ihnen.',
+    body: 'Priorisierte Disposition, direkte Route, keine Umwege. Wenn es eilt, ist Pegasus da — in ganz Deutschland.',
+    images: [
+      img('Express Transport', 'ChatGPT Image 21 May 2026 22_21_13.png', 'Express Transport — schnell vor Ort.', 'Express Transport'),
+    ],
+    highlights: ['Kurzfristige Buchung', 'Direktfahrt', 'Deutschlandweit'],
+  },
+  {
+    slug: 'malerarbeiten',
+    icon: 'paint',
+    title: 'Malerarbeiten',
+    desc: 'Innenanstrich, Tapezierarbeiten und fachgerechter Wandabriss.',
+    intro: 'Renovierung oder Umzug — wir übernehmen Ihre Malerarbeiten professionell. Innenräume werden sauber gestrichen, Wände tapeziert und bei Bedarf fachgerecht abgerissen.',
+    body: 'Unser Team führt Badana- und Anstricharbeiten aus, bereitet Wände vor und übernimmt auf Wunsch auch den Wandabriss für Umbauten. Alles aus einer Hand — sauber, termingerecht und mit Pegasus-Qualität.',
+    images: [
+      img('Malerarbeiten', 'ChatGPT Image 21 May 2026 23_19_38.png', 'Malerarbeiten', 'Malerarbeiten'),
+    ],
+    highlights: ['Innenanstrich & Tapezieren', 'Wandabriss inklusive', 'Saubere Ausführung'],
+  },
+  {
+    slug: 'einlagerung',
+    icon: 'warehouse',
+    title: 'Einlagerung',
+    desc: 'Sichere, klimatisierte Lagerräume kurz- oder langfristig.',
+    intro: 'Zwischen zwei Wohnungen oder während der Renovierung — wir lagern Ihre Möbel sicher ein. Transport mit unserer Pegasus-Flotte inklusive.',
+    body: 'Klimatisierte Lagerflächen, Versicherung und flexible Laufzeiten. Holen und Bringen nach Termin.',
+    images: [
+      img('Einlagerung', 'ChatGPT Image 21 May 2026 22_24_37.png', 'Sichere Einlagerung mit Pegasus Transport.', 'Einlagerung'),
+    ],
+    highlights: ['Kurz- & langfristig', 'Klimatisiert', 'Transport inklusive buchbar'],
+  },
+];
+
+const icons = {
+  home: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+  building: '<rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 22v-4h6v4M8 6h.01M12 6h.01M16 6h.01M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M16 14h.01"/>',
+  sofa: '<path d="M20 10V7a2 2 0 00-2-2H6a2 2 0 00-2 2v3M4 14v2a2 2 0 002 2h12a2 2 0 002-2v-2M2 14h20M6 18v2M18 18v2"/>',
+  trash: '<path d="M3 6h18M8 6V4a2 2 0 012-2h4a2 2 0 012 2v2m3 0v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6h14"/>',
+  box: '<path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>',
+  boxes: '<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>',
+  house: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>',
+  package: '<line x1="16.5" y1="9.4" x2="7.5" y2="4.21"/><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>',
+  wrench: '<path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>',
+  chef: '<path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/>',
+  sparkle: '<path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3z"/><path d="M5 3v4M3 5h4M19 17v4M17 19h4"/>',
+  garden: '<path d="M12 22V12M12 12C12 8 8 4 4 4c0 4 4 8 8 8M12 12c0-4 4-8 8-8-4 0-8 4-8 8"/>',
+  truck: '<rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>',
+  bolt: '<polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>',
+  users: '<path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>',
+  paint: '<path d="M14.06 2L16 4H8l1.94-2h4.12zM4 20h16v2H4v-2zM6 6h12l2 14H4L6 6z"/>',
+  warehouse: '<path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/>',
+};
+
+function getServiceBySlug(slug) {
+  return SERVICES.find((s) => s.slug === slug);
+}
