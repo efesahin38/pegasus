@@ -8,16 +8,7 @@ function getField(form, fieldName) {
   return (el?.value || '').trim();
 }
 
-function warnIfLocalFile() {
-  if (window.location.protocol !== 'file:') return;
 
-  const banner = document.createElement('div');
-  banner.style.cssText =
-    'position:fixed;top:72px;left:0;right:0;z-index:9999;background:#b45309;color:#fff;padding:14px 24px;text-align:center;font-size:0.9rem;font-family:Inter,sans-serif;';
-  banner.innerHTML =
-    '<strong>Formular funktioniert hier nicht.</strong> Bitte über <a href="http://localhost:8080" style="color:#fff">http://localhost:8080</a> öffnen.';
-  document.body.prepend(banner);
-}
 
 function showFormToast(message, type = 'success') {
   const existing = document.getElementById('formToast');
@@ -41,13 +32,7 @@ function showFormToast(message, type = 'success') {
 }
 
 async function sendForm(form, serviceSelectId) {
-  if (window.location.protocol === 'file:') {
-    showFormToast(
-      'Bitte die Seite über http://localhost:8080 oder Ihre Live-Website öffnen.',
-      'error'
-    );
-    return;
-  }
+
 
   const btn = form.querySelector('#formSubmitBtn');
   const originalText = btn?.textContent;
@@ -133,7 +118,6 @@ async function sendForm(form, serviceSelectId) {
 }
 
 function initContactForm(formId, serviceSelectId) {
-  warnIfLocalFile();
 
   const form = document.getElementById(formId);
   if (!form) return;

@@ -12,17 +12,49 @@
 <body>
   <!-- Header -->
   <header class="header" id="header">
+
     <div class="container header__inner">
       <a href="index.html" class="logo">
         <img src="images/logo.png" alt="Pegasus Umzug Logo" class="logo__img" />
         <span class="logo__text">PEGASUS UMZUG</span>
       </a>
       <nav class="nav" id="nav">
-        <a href="#services" class="nav__link">SERVICES</a>
-        <a href="#fuhrpark" class="nav__link">FUHRPARK</a>
-        <a href="#ueber-uns" class="nav__link">ÜBER UNS</a>
+        <div class="nav__item has-dropdown">
+          <a href="#services" class="nav__link">UMZÜGE & SERVICES <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
+          <div class="nav__dropdown mega-menu">
+            <a href="service.html?s=privatumzug">PRIVATUMZUG</a>
+            <a href="service.html?s=firmenumzug">FIRMENUMZUG</a>
+            <a href="service.html?s=behoerdenumzug">BEHÖRDENUMZUG</a>
+            <a href="service.html?s=seniorenumzug">SENIORENUMZUG</a>
+            <a href="service.html?s=moebeltransport">MÖBELTRANSPORT</a>
+            <a href="service.html?s=kleintransport">KLEINTRANSPORT</a>
+            <a href="service.html?s=transportservice">TRANSPORTSERVICE</a>
+            <a href="service.html?s=express-transport">EXPRESS TRANSPORT</a>
+            <a href="service.html?s=beiladung">BEILADUNG</a>
+            <a href="service.html?s=einlagerung">EINLAGERUNG</a>
+            <a href="service.html?s=halteverbotszone">HALTEVERBOTSZONE</a>
+            <a href="service.html?s=moebelmontage">MÖBELMONTAGE</a>
+            <a href="service.html?s=kuechenmontage">KÜCHENMONTAGE</a>
+            <a href="service.html?s=malerarbeiten">MALERARBEITEN</a>
+            <a href="service.html?s=wandabbruch">WANDABBRUCH</a>
+            <a href="service.html?s=entruempelung">ENTRÜMPELUNG</a>
+            <a href="service.html?s=sperrmuellentsorgung">SPERRMÜLL</a>
+            <a href="service.html?s=kelleraufloesung">KELLERAUFLÖSUNG</a>
+            <a href="service.html?s=haushaltsaufloesung">HAUSHALTSAUFLÖSUNG</a>
+            <a href="service.html?s=verpackungsservice">VERPACKUNG</a>
+            <a href="service.html?s=reinigungsservice">REINIGUNGSSERVICE</a>
+            <a href="service.html?s=gartenreinigung">GARTENREINIGUNG</a>
+          </div>
+        </div>
+
+        <div class="nav__item">
+          <a href="#fuhrpark" class="nav__link">FUHRPARK</a>
+        </div>
+        <div class="nav__item">
+          <a href="#ueber-uns" class="nav__link">ÜBER UNS</a>
+        </div>
       </nav>
-      <a href="#kontakt" class="btn btn--primary header__cta">ANGEBOT ANFORDERN</a>
+      <a href="#kontakt" class="btn btn--primary header__cta">PREIS EINHOLEN</a>
       <button class="menu-toggle" id="menuToggle" aria-label="Menü öffnen">
         <span></span><span></span><span></span>
       </button>
@@ -35,19 +67,14 @@
       <img src="images/ChatGPT Image 21 May 2026 16_20_04.png" alt="Pegasus Umzug Team" />
       <div class="hero__overlay"></div>
     </div>
-    <div class="container hero__content">
-      <p class="label">■ PREMIUM UMZUGSSERVICE IN DEUTSCHLAND</p>
-      <h1 class="hero__title">
-        IHR UMZUG<br />
-        <span class="text-gold">PERFEKT</span><br />
-        GEPLANT.
-      </h1>
-      <p class="hero__desc">
-        Von der sorgfältigen Verpackung bis zur professionellen Küchenmontage — Pegasus übernimmt jeden Schritt Ihres Umzugs mit höchster Präzision.
-      </p>
-      <div class="hero__buttons">
-        <a href="#kontakt" class="btn btn--primary">JETZT BUCHEN</a>
-        <a href="#services" class="btn btn--outline">UNSERE LEISTUNGEN</a>
+    <div class="container hero__inner hero__inner--flex">
+      <div class="hero__content">
+        <h1 class="hero__title">
+          Pegasus Umzüge – Ihr Partner für Umzüge deutschlandweit
+        </h1>
+        <p class="hero__desc">
+          Wenn Sie einen erfahrenen und verlässlichen Partner für Ihren Umzug suchen, sind Sie bei Pegasus Umzug genau richtig. Wir bieten private und gewerbliche Umzüge in Berlin, deutschlandweit und international – persönlich, strukturiert und sicher.
+        </p>
       </div>
     </div>
   </section>
@@ -55,16 +82,74 @@
   <!-- Services -->
   <section class="services" id="services">
     <div class="container">
-      <div class="services__header">
-        <div>
-          <p class="label">16 SPEZIALISIERTE SERVICES</p>
-          <h2 class="section-title">UNSERE DIENSTLEISTUNGEN</h2>
-          <p class="section-desc">Full-Service-Paket für private und geschäftliche Kunden. Pünktlich, sicher und zuverlässig.</p>
-        </div>
-        <a href="#kontakt" class="services__link">KOSTENLOSES ANGEBOT</a>
+      <div class="services__header" style="justify-content: center; text-align: center; margin-bottom: 20px;">
+        <h2 class="section-title" style="font-size: 3rem; margin: 0 auto;">UMZÜGE</h2>
       </div>
+
+      <div class="zig-zag">
+        <!-- 1. Privatumzug -->
+        <div class="zz-row">
+          <div class="zz-content">
+            <h3>Privatumzug</h3>
+            <p>Ein Privatumzug ist mehr als Transport — es geht um Ihr Zuhause. Unser Team in Pegasus-Uniform kümmert sich von der ersten Kiste bis zur letzten Möbelposition um jeden Schritt. Wir planen Ihren Umzug individuell, schützen empfindliche Gegenstände und halten vereinbarte Termine ein.</p>
+            <a href="service.html?s=privatumzug" class="btn btn--outline">MEHR ERFAHREN</a>
+          </div>
+          <div class="zz-image">
+            <img src="images/ChatGPT Image 21 May 2026 16_20_04.png" alt="Privatumzug" />
+          </div>
+        </div>
+
+        <!-- 2. Malerarbeiten -->
+        <div class="zz-row">
+          <div class="zz-content">
+            <h3>Malerarbeiten</h3>
+            <p>Ob beim Einzug oder Auszug – unser Maler-Team übernimmt sämtliche Streich- und Tapezierarbeiten für Sie. Wir arbeiten mit hochwertigen Farben, decken Böden und Möbel sorgfältig ab und hinterlassen die Räume makellos sauber.</p>
+            <a href="service.html?s=malerarbeiten" class="btn btn--outline">MEHR ERFAHREN</a>
+          </div>
+          <div class="zz-image">
+            <img src="images/malerarbeiten_professional.png" alt="Malerarbeiten" />
+          </div>
+        </div>
+
+        <!-- 3. Möbelmontage -->
+        <div class="zz-row">
+          <div class="zz-content">
+            <h3>Möbelmontage</h3>
+            <p>Schränke, Betten, Sofas — unsere Monteure übernehmen die professionelle Möbelmontage für Sie. Wir kennen alle gängigen Systeme und arbeiten sauber. Nach der Montage ist alles stabil und gebrauchsfertig.</p>
+            <a href="service.html?s=moebelmontage" class="btn btn--outline">MEHR ERFAHREN</a>
+          </div>
+          <div class="zz-image">
+            <img src="images/Möbelmontage/ChatGPT Image 21 May 2026 21_52_45.png" alt="Möbelmontage" />
+          </div>
+        </div>
+
+        <!-- 4. Entrümpelung -->
+        <div class="zz-row">
+          <div class="zz-content">
+            <h3>Entrümpelung</h3>
+            <p>Wir räumen Wohnungen, Büros und Lagerräume vollständig — diskret, schnell und fachgerecht. Alles wird sortiert und umweltgerecht entsorgt. Unser Team arbeitet mit Pegasus-Ausrüstung und übergibt das Objekt besenrein.</p>
+            <a href="service.html?s=entruempelung" class="btn btn--outline">MEHR ERFAHREN</a>
+          </div>
+          <div class="zz-image">
+            <img src="images/Entrümpelung/ChatGPT Image 21 May 2026 21_06_46.png" alt="Entrümpelung" />
+          </div>
+        </div>
+
+        <!-- 5. Wandabbruch -->
+        <div class="zz-row">
+          <div class="zz-content">
+            <h3>Wandabbruch</h3>
+            <p>Professioneller Wandabbruch und Vorbereitungsarbeiten für Ihre Renovierung. Unser erfahrenes Team führt Abrissarbeiten sicher und sauber durch, inklusive fachgerechter Entsorgung des Bauschutts.</p>
+            <a href="service.html?s=wandabbruch" class="btn btn--outline">MEHR ERFAHREN</a>
+          </div>
+          <div class="zz-image">
+            <img src="images/wandabbruch_professional.png" alt="Wandabbruch" />
+          </div>
+        </div>
+      </div>
+
+
     </div>
-    <div class="services-grid" id="servicesGrid"></div>
   </section>
 
   <!-- Why Pegasus -->
@@ -102,33 +187,6 @@
               <p>Nicht nur transportieren, sondern einziehen. Wir bauen Ihre Küche auf und reinigen das Objekt.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Montage -->
-  <section class="montage">
-    <div class="montage__hero">
-      <p class="label label--light">MONTAGE & SERVICE</p>
-      <h2 class="montage__title">MEHR ALS NUR TRANSPORT</h2>
-      <p class="montage__subtitle">
-        Unsere erfahrenen Monteure bauen Ihre Möbel und Küchen mit Präzision auf — damit Sie sich vom ersten Tag an zuhause fühlen.
-      </p>
-    </div>
-    <div class="container montage__cards">
-      <div class="montage-card">
-        <img src="images/Möbelmontage/ChatGPT Image 21 May 2026 21_52_45.png" alt="Möbelmontage" />
-        <div class="montage-card__overlay">
-          <h3>Möbelmontage</h3>
-          <p class="text-gold">PROFESSIONELLE MONTEURE</p>
-        </div>
-      </div>
-      <div class="montage-card">
-        <img src="images/Küchenmontage/ChatGPT Image 21 May 2026 21_58_12.png" alt="Präzisionsarbeit" />
-        <div class="montage-card__overlay">
-          <h3>Präzisionsarbeit</h3>
-          <p class="text-gold">ERFAHRENE MONTEURE</p>
         </div>
       </div>
     </div>
@@ -175,7 +233,6 @@
       <p class="coverage__note">… und überall sonst in Deutschland. Fragen Sie uns einfach an.</p>
     </div>
   </section>
-
   <!-- Contact -->
   <section class="contact" id="kontakt">
     <div class="container contact__inner">

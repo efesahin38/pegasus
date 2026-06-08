@@ -2,7 +2,11 @@ function renderServices() {
   const grid = document.getElementById('servicesGrid');
   if (!grid || typeof SERVICES === 'undefined') return;
 
-  grid.innerHTML = SERVICES.map((s) => `
+  // Render only the 3 main services on the homepage
+  const homeServices = ['kleintransport', 'malerarbeiten', 'moebelmontage'];
+  const servicesToRender = SERVICES.filter(s => homeServices.includes(s.slug));
+
+  grid.innerHTML = servicesToRender.map((s) => `
     <a href="service.html?s=${s.slug}" class="service-card">
       <div class="service-card__icon">
         <svg viewBox="0 0 24 24">${icons[s.icon] || icons.box}</svg>
@@ -33,9 +37,19 @@ menuToggle?.addEventListener('click', () => {
 });
 
 nav?.querySelectorAll('.nav__link').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuToggle?.classList.remove('active');
-    nav?.classList.remove('open');
+  link.addEventListener('click', (e) => {
+    const parent = link.parentElement;
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile && parent.classList.contains('has-dropdown')) {
+      e.preventDefault();
+      parent.classList.toggle('dropdown-open');
+    } else {
+      menuToggle?.classList.remove('active');
+      nav?.classList.remove('open');
+      // Ensure dropdowns are closed when a normal link is clicked
+      nav?.querySelectorAll('.has-dropdown').forEach(d => d.classList.remove('dropdown-open'));
+    }
   });
 });
 

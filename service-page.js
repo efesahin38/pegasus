@@ -61,11 +61,6 @@ function renderServicePage() {
           <p>${service.body}</p>
           <ul class="service-highlights">${highlightsHtml}</ul>
         </div>
-        <aside class="service-content__cta">
-          <h3>Jetzt anfragen</h3>
-          <p>Kostenloses Angebot für <strong>${service.title}</strong> innerhalb von 24 Stunden.</p>
-          <a href="#kontakt" class="btn btn--primary btn--full">ANGEBOT ANFORDERN</a>
-        </aside>
       </div>
     </section>
   `;
@@ -93,9 +88,18 @@ menuToggle?.addEventListener('click', () => {
 });
 
 nav?.querySelectorAll('.nav__link').forEach((link) => {
-  link.addEventListener('click', () => {
-    menuToggle?.classList.remove('active');
-    nav?.classList.remove('open');
+  link.addEventListener('click', (e) => {
+    const parent = link.parentElement;
+    const isMobile = window.innerWidth <= 768;
+
+    if (isMobile && parent.classList.contains('has-dropdown')) {
+      e.preventDefault();
+      parent.classList.toggle('dropdown-open');
+    } else {
+      menuToggle?.classList.remove('active');
+      nav?.classList.remove('open');
+      nav?.querySelectorAll('.has-dropdown').forEach(d => d.classList.remove('dropdown-open'));
+    }
   });
 });
 
