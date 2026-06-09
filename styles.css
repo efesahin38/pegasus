@@ -1259,10 +1259,11 @@ body:has(#serviceMain) {
   font-size: 0.9rem;
 }
 .ps-summary {
-  background: var(--navy);
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
   border-radius: 12px;
   padding: 32px;
-  color: var(--white);
+  color: var(--navy);
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   animation: fadeIn 0.4s ease;
 }
@@ -1273,7 +1274,7 @@ body:has(#serviceMain) {
 .ps-summary h3 {
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--white);
+  color: var(--navy);
   margin-bottom: 20px;
   padding-bottom: 12px;
   border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -1292,7 +1293,7 @@ body:has(#serviceMain) {
   color: var(--gray-400);
 }
 .ps-summary__list li span {
-  color: var(--white);
+  color: var(--navy);
   font-weight: 600;
 }
 .ps-summary__total {
