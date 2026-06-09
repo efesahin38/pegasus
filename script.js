@@ -65,3 +65,23 @@ window.addEventListener('scroll', () => {
 renderServices();
 populateHomeContactSelect();
 initContactForm('contactForm', 'service');
+
+function initPriceCalculator() {
+  const checkboxes = document.querySelectorAll('.price-calc-cb');
+  const totalPriceEl = document.getElementById('total-price');
+  if (!checkboxes.length || !totalPriceEl) return;
+
+  checkboxes.forEach(cb => {
+    cb.addEventListener('change', () => {
+      let total = 0;
+      checkboxes.forEach(box => {
+        if (box.checked) {
+          total += parseInt(box.value, 10);
+        }
+      });
+      totalPriceEl.textContent = total;
+    });
+  });
+}
+
+initPriceCalculator();
