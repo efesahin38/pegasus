@@ -67,19 +67,56 @@ populateHomeContactSelect();
 initContactForm('contactForm', 'service');
 
 function initPriceCalculator() {
-  const checkboxes = document.querySelectorAll('.price-calc-cb');
-  const totalPriceEl = document.getElementById('total-price');
-  if (!checkboxes.length || !totalPriceEl) return;
+  const dropdown = document.getElementById('psDropdown');
+  const header = document.getElementById('psDropdownHeader');
+  const checkboxes = document.querySelectorAll('.ps-cb');
+  const summary = document.getElementById('psSummary');
+  const summaryList = document.getElementById('psSummaryList');
+  const totalPriceEl = document.getElementById('psTotalPrice');
 
+  if (!dropdown || !checkboxes.length) return;
+
+  // Toggle dropdown
+  header.addEventListener('click', () => {
+    dropdown.classList.toggle('open');
+  });
+
+  // Close dropdown on click outside
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+
+  // Handle selections
   checkboxes.forEach(cb => {
     cb.addEventListener('change', () => {
       let total = 0;
+      let selectedItems = [];
+
       checkboxes.forEach(box => {
         if (box.checked) {
           total += parseInt(box.value, 10);
+          selectedItems.push({
+            name: box.getAttribute('data-name'),
+            price: box.getAttribute('data-price')
+          });
         }
       });
-      totalPriceEl.textContent = total;
+
+      if (selectedItems.length > 0) {
+        summary.style.display = 'block';
+        summaryList.innerHTML = selectedItems.map(item => `
+          <li>${item.name} <span>${item.price}</span></li>
+        `).join('');
+        totalPriceEl.textContent = total;
+        
+        // Update header text to show selection count
+        header.querySelector('span').textContent = `${selectedItems.length} Dienstleistung(en) ausgewählt`;
+      } else {
+        summary.style.display = 'none';
+        header.querySelector('span').textContent = 'Dienstleistung auswählen...';
+      }
     });
   });
 }

@@ -251,123 +251,48 @@
         </p>
       </div>
       
-      <div class="pricing__calculator">
-        <div class="pricing__list">
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="399" />
-            <span class="pricing-item__name">Privatumzug</span>
-            <span class="pricing-item__price">ab 399 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="990" />
-            <span class="pricing-item__name">Firmenumzug</span>
-            <span class="pricing-item__price">ab 990 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="790" />
-            <span class="pricing-item__name">Behördenumzug</span>
-            <span class="pricing-item__price">ab 790 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="590" />
-            <span class="pricing-item__name">Seniorenumzug</span>
-            <span class="pricing-item__price">ab 590 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="89" />
-            <span class="pricing-item__name">Möbeltransport</span>
-            <span class="pricing-item__price">ab 89 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="69" />
-            <span class="pricing-item__name">Kleintransport</span>
-            <span class="pricing-item__price">ab 69 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="79" />
-            <span class="pricing-item__name">Transportservice</span>
-            <span class="pricing-item__price">ab 79 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="149" />
-            <span class="pricing-item__name">Express Transport</span>
-            <span class="pricing-item__price">ab 149 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="59" />
-            <span class="pricing-item__name">Beiladung</span>
-            <span class="pricing-item__price">ab 59 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="49" />
-            <span class="pricing-item__name">Einlagerung</span>
-            <span class="pricing-item__price">ab 49 €/Monat</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="120" />
-            <span class="pricing-item__name">Halteverbotszone</span>
-            <span class="pricing-item__price">ab 120 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="79" />
-            <span class="pricing-item__name">Möbelmontage</span>
-            <span class="pricing-item__price">ab 79 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="299" />
-            <span class="pricing-item__name">Küchenmontage</span>
-            <span class="pricing-item__price">ab 299 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="49" />
-            <span class="pricing-item__name">Verpackung</span>
-            <span class="pricing-item__price">ab 49 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="10" />
-            <span class="pricing-item__name">Malerarbeiten</span>
-            <span class="pricing-item__price">ab 10 €/m²</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="29" />
-            <span class="pricing-item__name">Reinigungservice</span>
-            <span class="pricing-item__price">ab 29 €/h</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="149" />
-            <span class="pricing-item__name">Gartenreinigung</span>
-            <span class="pricing-item__price">ab 149 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="40" />
-            <span class="pricing-item__name">Wandabbruch</span>
-            <span class="pricing-item__price">ab 40 €/m²</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="299" />
-            <span class="pricing-item__name">Entrümpelung</span>
-            <span class="pricing-item__price">ab 299 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="249" />
-            <span class="pricing-item__name">Kellerauflösung</span>
-            <span class="pricing-item__price">ab 249 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="89" />
-            <span class="pricing-item__name">Sperrmüll</span>
-            <span class="pricing-item__price">ab 89 €</span>
-          </label>
-          <label class="pricing-item">
-            <input type="checkbox" class="price-calc-cb" value="790" />
-            <span class="pricing-item__name">Haushaltsauflösung</span>
-            <span class="pricing-item__price">ab 790 €</span>
-          </label>
+      <div class="pricing-modern">
+        <div class="ps-dropdown" id="psDropdown">
+          <div class="ps-dropdown__header" id="psDropdownHeader">
+            <span>Dienstleistung auswählen...</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </div>
+          <div class="ps-dropdown__list" id="psDropdownList">
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="399" data-name="Privatumzug" data-price="ab 399 €" /> <span class="ps-name">Privatumzug</span> <span class="ps-price">ab 399 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="990" data-name="Firmenumzug" data-price="ab 990 €" /> <span class="ps-name">Firmenumzug</span> <span class="ps-price">ab 990 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="790" data-name="Behördenumzug" data-price="ab 790 €" /> <span class="ps-name">Behördenumzug</span> <span class="ps-price">ab 790 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="590" data-name="Seniorenumzug" data-price="ab 590 €" /> <span class="ps-name">Seniorenumzug</span> <span class="ps-price">ab 590 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="89" data-name="Möbeltransport" data-price="ab 89 €" /> <span class="ps-name">Möbeltransport</span> <span class="ps-price">ab 89 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="69" data-name="Kleintransport" data-price="ab 69 €" /> <span class="ps-name">Kleintransport</span> <span class="ps-price">ab 69 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="79" data-name="Transportservice" data-price="ab 79 €" /> <span class="ps-name">Transportservice</span> <span class="ps-price">ab 79 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="149" data-name="Express Transport" data-price="ab 149 €" /> <span class="ps-name">Express Transport</span> <span class="ps-price">ab 149 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="59" data-name="Beiladung" data-price="ab 59 €" /> <span class="ps-name">Beiladung</span> <span class="ps-price">ab 59 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="49" data-name="Einlagerung" data-price="ab 49 €/Monat" /> <span class="ps-name">Einlagerung</span> <span class="ps-price">ab 49 €/Monat</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="120" data-name="Halteverbotszone" data-price="ab 120 €" /> <span class="ps-name">Halteverbotszone</span> <span class="ps-price">ab 120 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="79" data-name="Möbelmontage" data-price="ab 79 €" /> <span class="ps-name">Möbelmontage</span> <span class="ps-price">ab 79 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="299" data-name="Küchenmontage" data-price="ab 299 €" /> <span class="ps-name">Küchenmontage</span> <span class="ps-price">ab 299 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="49" data-name="Verpackung" data-price="ab 49 €" /> <span class="ps-name">Verpackung</span> <span class="ps-price">ab 49 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="10" data-name="Malerarbeiten" data-price="ab 10 €/m²" /> <span class="ps-name">Malerarbeiten</span> <span class="ps-price">ab 10 €/m²</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="29" data-name="Reinigungservice" data-price="ab 29 €/h" /> <span class="ps-name">Reinigungservice</span> <span class="ps-price">ab 29 €/h</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="149" data-name="Gartenreinigung" data-price="ab 149 €" /> <span class="ps-name">Gartenreinigung</span> <span class="ps-price">ab 149 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="40" data-name="Wandabbruch" data-price="ab 40 €/m²" /> <span class="ps-name">Wandabbruch</span> <span class="ps-price">ab 40 €/m²</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="299" data-name="Entrümpelung" data-price="ab 299 €" /> <span class="ps-name">Entrümpelung</span> <span class="ps-price">ab 299 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="249" data-name="Kellerauflösung" data-price="ab 249 €" /> <span class="ps-name">Kellerauflösung</span> <span class="ps-price">ab 249 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="89" data-name="Sperrmüll" data-price="ab 89 €" /> <span class="ps-name">Sperrmüll</span> <span class="ps-price">ab 89 €</span></label>
+            <label class="ps-item"><input type="checkbox" class="ps-cb" value="790" data-name="Haushaltsauflösung" data-price="ab 790 €" /> <span class="ps-name">Haushaltsauflösung</span> <span class="ps-price">ab 790 €</span></label>
+          </div>
         </div>
-        <div class="pricing__total-box">
-          <h3>Geschätzte Gesamtkosten</h3>
-          <div class="pricing__total-amount">ab <span id="total-price">0</span> €</div>
-          <a href="#kontakt" class="btn btn--primary" style="margin-top: 20px; width: 100%;">JETZT ANFRAGEN</a>
+
+        <div class="ps-summary" id="psSummary" style="display: none;">
+          <h3>Ausgewählte Dienstleistungen</h3>
+          <ul class="ps-summary__list" id="psSummaryList">
+            <!-- JS will inject here -->
+          </ul>
+          <div class="ps-summary__total">
+            <span>Geschätzte Gesamtkosten</span>
+            <strong>ab <span id="psTotalPrice">0</span> €</strong>
+          </div>
+          <a href="#kontakt" class="btn btn--primary btn--full" style="margin-top: 24px;">JETZT ANFRAGEN</a>
         </div>
       </div>
     </div>
