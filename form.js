@@ -1,4 +1,4 @@
-const FORM_EMAIL = 'efesahin38@hotmail.com';
+const FORM_EMAIL = 'info@pegasus-umzuege-entruempelungen.de';
 const FORM_URL = `https://formsubmit.co/ajax/${FORM_EMAIL}`;
 const SUCCESS_MSG =
   'Vielen Dank! Wir melden uns innerhalb von 24 Stunden bei Ihnen.';
@@ -98,7 +98,7 @@ async function sendForm(form, serviceSelectId) {
       }
     } else if (data.message && /activation/i.test(data.message)) {
       showFormToast(
-        'Bitte efesahin38@hotmail.com prüfen (auch Spam) und „Activate Form“ klicken.',
+        'Bitte info@pegasus-umzuege-entruempelungen.de prüfen (auch Spam) und „Activate Form" klicken.',
         'error'
       );
     } else {
